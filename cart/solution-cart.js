@@ -4,7 +4,11 @@ class Cart {
 	}
 	
 	addProduct(productCode, quantity) {
-		this.products.has(productCode) ? this.products.set(productCode, quantity + 1) : this.products.set(productCode, quantity);
+		if(this.products.has(productCode)) {
+			this.products.set(productCode, quantity + this.products.get(productCode));
+		} else {
+			this.products.set(productCode, quantity);
+		}
 	}
 
 	removeProduct(productCode) {
@@ -28,7 +32,7 @@ var cart = new Cart();
 
 // Test case 1
 cart.addProduct("Baju Merah Mantap", 1);
-cart.addProduct("Baju Merah Mantap", 1);
+cart.addProduct("Baju Merah Mantap", 3);
 cart.addProduct("Bukuku", 3);
 cart.removeProduct("Bukuku");
 cart.addProduct("Singlet Hijau", 1);
