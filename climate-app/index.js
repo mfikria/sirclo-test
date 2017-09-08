@@ -9,11 +9,11 @@ function generateTableHeader(cityName) {
 }
 
 function generateTableFooter(temperature, variance) {
-	return '<tr><td><strong>Average</strong></td><td><strong>' + temperature + 'C</strong></td><td><strong>' + variance.toFixed(2) + 'C</strong></td></tr>';
+	return '<tr><td><strong>Average</strong></td><td><strong>' + temperature.toFixed(0) + 'C</strong></td><td><strong>' + variance.toFixed(2) + 'C</strong></td></tr>';
 }
 
 function generateTableData(date, temperature, variance) {
-	return '<tr><td>' + date + '</td><td>' + temperature + 'C</td><td>' + variance.toFixed(2) +'C</td></tr>';
+	return '<tr><td>' + date + '</td><td>' + temperature.toFixed(0) + 'C</td><td>' + variance.toFixed(2) +'C</td></tr>';
 }
 
 function fetchData(e) {
@@ -30,7 +30,7 @@ function fetchData(e) {
 		var cityName = response['city']['name'];
 		response['list'].forEach(function(condition){
 			// Collect temperature data and fix the format
-			temperatures.push(parseInt(condition['temp']['day']));
+			temperatures.push(parseFloat(condition['temp']['day']));
 			
 			// Collect variance data and fix the format
 			variances.push(parseFloat(condition['temp']['max'] - condition['temp']['min']));
