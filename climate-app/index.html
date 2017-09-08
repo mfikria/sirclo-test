@@ -1,14 +1,22 @@
-<h1> Climate App </h1>
-<form action="" id="climate-form">
-	<select name="city-list" form="climate-form">
-		<option value="jakarta">Jakarta</option>
-		<option value="tokyo">Tokyo</option>
-		<option value="london">London</option>
-	</select>
-	<input type="submit">
-</form>
-<br>
+<html>
+	<head>
+		<script src="index.js"></script>
+	</head>
+	
+	<body>
+		<h1> Climate App </h1>
+		<form id="climate-form" onsubmit="fetchData()">
+			<select name="city-list" form="climate-form">
+				<option value="jakarta">Jakarta</option>
+				<option value="tokyo">Tokyo</option>
+				<option value="london">London</option>
+			</select>
+			<input type="submit">
+		</form>
+		<br>
 
-<ul id="list">
-	No data yet! Select the city first!
-</ul>
+		<ul id="list">
+			No data yet! Select the city first!
+		</ul>
+	</body>
+</html>
