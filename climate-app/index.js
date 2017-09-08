@@ -9,7 +9,7 @@ function generateTableHeader(cityName) {
 }
 
 function generateTableFooter(temperature, variance) {
-	return '<tr><td><strong>Average</strong></td><td><strong>' + temperature + '</strong></td><td><strong>' + variance.toFixed(2) + '</strong></td></tr>';
+	return '<tr><td><strong>Average</strong></td><td><strong>' + temperature + 'C</strong></td><td><strong>' + variance.toFixed(2) + 'C</strong></td></tr>';
 }
 
 function generateTableData(date, temperature, variance) {
