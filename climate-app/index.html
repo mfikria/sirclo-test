@@ -5,7 +5,7 @@
 	
 	<body>
 		<h1> Climate App </h1>
-		<form id="climate-form" onsubmit="fetchData()">
+		<form id="climate-form" onsubmit="return fetchData()">
 			<select name="city-list" form="climate-form">
 				<option value="jakarta">Jakarta</option>
 				<option value="tokyo">Tokyo</option>
@@ -14,9 +14,9 @@
 			<input type="submit">
 		</form>
 		<br>
-
-		<ul id="list">
-			No data yet! Select the city first!
-		</ul>
+		
+		<table id="result-table">
+		<tr><td>No data yet! Select the city first!</tr></td>
+		</table>
 	</body>
 </html>
